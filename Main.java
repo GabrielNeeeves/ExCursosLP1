@@ -25,8 +25,12 @@ public class Main {
                         id = scanner.nextInt();
                     } while(id <= 0);
 
-                    System.out.println("Descição do CURSO: ");
-                    String desc = scanner.next();
+                    String desc;
+                    do {
+                        System.out.println("Descição do CURSO: ");
+                        desc = scanner.next();
+                        // scanner.next();
+                    } while(desc.length() <= 10);
                     
                     String turno;
                     do {
@@ -35,6 +39,13 @@ public class Main {
                     } while(!(turno.equalsIgnoreCase("MATUTINO")) & !(turno.equalsIgnoreCase("vespertino")) & !(turno.equalsIgnoreCase("noturno")));
 
                     var novoCurso = new Curso(id, desc, turno);
+                    if(novoCurso.getTurno().equalsIgnoreCase("MATUTINO")) {
+                        Curso.qtdMatutino ++;
+                    } else if(novoCurso.getTurno().equalsIgnoreCase("vespertino")) {
+                        Curso.qtdVespertino ++;
+                    } else {
+                        Curso.qtdNoturno ++;
+                    }
 
                     listaCurso.add(novoCurso);
                     break;
@@ -54,5 +65,11 @@ public class Main {
             System.out.println("Turno: " + curso.getTurno().toUpperCase());
             System.out.println("----------------------");
         }
+
+        System.out.println("Quantidade de Curso MATUTINOS: "+Curso.qtdMatutino);
+        System.out.println("Quantidade de Curso VESPERTINOS: "+Curso.qtdVespertino);
+        System.out.println("Quantidade de Curso NOTURNOS: "+Curso.qtdNoturno);
+
+        scanner.close();
     }   
 }

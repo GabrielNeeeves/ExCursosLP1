@@ -3,6 +3,10 @@ package model;
 import java.util.ArrayList;
 
 public class Curso {
+
+    public static int qtdMatutino;
+    public static int qtdVespertino;
+    public static int qtdNoturno;
     
     private int id;
     private String descricao;
@@ -35,6 +39,9 @@ public class Curso {
         this.turno = turno;
     };
 
-    
+    public void verificarQuantidade() {
+        
+    }
+
 }
     
