@@ -29,10 +29,10 @@ public class Main {
                     String desc = scanner.next();
                     
                     String turno;
-                    // do {
+                    do {
                         System.out.println("Turno do CURSO");
                         turno = scanner.next();
-                    // } while(turno != "matutino" && turno != "vespertino" && turno != "noturno");
+                    } while(turno.toUpperCase() == "MATUTINO" || turno.toUpperCase() == "VESPERTINO" || turno.toUpperCase() == "NOTURNO");
 
                     var novoCurso = new Curso(id, desc, turno);
 
@@ -51,7 +51,7 @@ public class Main {
         for (Curso curso : listaCurso) {
             System.out.println("ID: " + curso.getId());
             System.out.println("Descrição" + curso.getDescricao());
-            System.out.println("Turno: " + curso.getTurno());
+            System.out.println("Turno: " + curso.getTurno().toUpperCase());
             System.out.println("----------------------");
         }
     }   
