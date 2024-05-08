@@ -32,7 +32,7 @@ public class Main {
                     do {
                         System.out.println("Turno do CURSO");
                         turno = scanner.next();
-                    } while(turno.toUpperCase() == "MATUTINO" || turno.toUpperCase() == "VESPERTINO" || turno.toUpperCase() == "NOTURNO");
+                    } while(!(turno.equalsIgnoreCase("MATUTINO")) & !(turno.equalsIgnoreCase("vespertino")) & !(turno.equalsIgnoreCase("noturno")));
 
                     var novoCurso = new Curso(id, desc, turno);
 
@@ -50,7 +50,7 @@ public class Main {
         System.out.println();
         for (Curso curso : listaCurso) {
             System.out.println("ID: " + curso.getId());
-            System.out.println("Descrição" + curso.getDescricao());
+            System.out.println("Descrição: " + curso.getDescricao());
             System.out.println("Turno: " + curso.getTurno().toUpperCase());
             System.out.println("----------------------");
         }
